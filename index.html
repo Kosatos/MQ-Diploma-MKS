@@ -22,7 +22,12 @@
 	<main class="main__content">
 		<div class="container">
 			<section class="hero">
-				<img src="img/banner-mobile.jpg" alt="Человек на выступе горы" class="hero__img">
+				<picture class="hero__img">
+ 					<source srcset="img/banner-mobile.jpg" media="(max-width: 640px)">
+					<source srcset="img/banner-bg-tablet.jpg" media="(max-width: 1200px)">
+					<source srcset="img/banner-bg.jpg" media="(min-width: 1201px)">
+ 					<img src="img/banner-mobile.jpg" alt="Человек на выступе горы">
+				</picture>
 				<div class="hero__content">
 					<a href="/">
 					<img src="svg/noemi-logo.svg" alt="логотип Noémi" class="logo"></a>
