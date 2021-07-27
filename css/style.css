@@ -64,7 +64,8 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.header .logo {
+.header__logo {
+	width: 100%;
 	display: none;
 }
 
@@ -159,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 225px 10%;
 }
 
-.logo {
+.hero__logo {
 	width: 100%;
 }
 
@@ -196,6 +197,13 @@ h1, h2, h3, h4, h5, h6 {
 	left: 0;
 	right: 0;
 	margin: auto;
+}
+
+.trends__container__substrate {
+	position: relative;
+	width: 100%;
+	background: rgba(0, 0, 0, 1);
+	z-index: 0;
 }
 
 .trend {
@@ -269,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 35px;	
 }
 
-.post:last-child {
+.last-item {
   	margin-bottom: 0;
 }
 
@@ -333,10 +341,6 @@ h1, h2, h3, h4, h5, h6 {
 	display: flex;
 	margin-bottom: 22px;
 	align-items: flex-start;  
-}
-
-.news__item:last-child {
-	margin-bottom: 0;
 }
 
 .news__item-img {
@@ -485,9 +489,10 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 30px;
 }
 
-.product:last-child {
-	margin-bottom: 0;
+.last-product {
+  	margin-bottom: 0;
 }
+
 
 .product__img {
 	padding: 0 12px;
@@ -860,6 +865,28 @@ h1, h2, h3, h4, h5, h6 {
 
 /*____________________________media____________________________*/
 
+@media (max-width: 641px) and (orientation: landscape) {
+
+.trends__container {
+	display: flex;
+	flex-wrap: 	wrap;	
+}
+
+.trends__substrate {
+	width: 50%;	
+	background-clip: content-box;
+	margin-bottom: 4px;
+}
+
+.odd-trend {
+	padding-right: 2px;	
+}
+
+.even-trend {
+	padding-left: 2px;	
+}
+}
+
 @media (min-width: 641px) and (max-width: 1200px) {
 
 .container {
@@ -872,7 +899,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right: 35px;
 }
 
-.header .logo {
+.header__logo {
 	display: block;	
 	width: 160px;
 }
@@ -880,10 +907,10 @@ h1, h2, h3, h4, h5, h6 {
 .hero__content {
 	position: relative;
 	z-index: 3;
-	padding: 180px 15% 120px;	
+	padding: 180px 100px 120px;	
 }
 
-.hero .logo {
+.hero__logo {
 	display: none;	
 }
 
@@ -897,17 +924,17 @@ h1, h2, h3, h4, h5, h6 {
 	flex-wrap: 	wrap;	
 }
 
-.trends__container .substrate {
+.trends__substrate {
 	width: 50%;	
 	background-clip: content-box;
 	margin-bottom: 4px;
 }
 
-.trends__container .substrate:nth-child(odd) {
+.odd-trend {
 	padding-right: 2px;	
 }
 
-.trends__container .substrate:nth-child(even) {
+.even-trend {
 	padding-left: 2px;	
 }
 
@@ -939,19 +966,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product {
-	width: 46%;
+	width: 50%;
 }
 
-.product:nth-child(odd) {
-	padding-right: 2%;	
+.odd-product {
+	padding-right: 12px;	
 }
 
-.product:nth-child(even) {
-	padding-left: 2%;	
+.even-product {
+	padding-left: 12px;	
 }
 
 .popup__body {
 	padding: 155px 185px 220px;
+}
+}
+
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+
+.trends__container {
+	display: flex;
+	flex-wrap: 	wrap;	
+}
+
+.trends__substrate {
+	width: 50%;	
+	background-clip: content-box;
+	margin-bottom: 4px;
+}
+
+.odd-trend {
+	padding-right: 2px;	
+}
+
+.even-trend {
+	padding-left: 2px;	
 }
 }
 
@@ -967,7 +1016,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right: 245px;
 }
 
-.header .logo {
+.header__logo {
 	display: block;	
 	width: 180px;
 }
@@ -983,10 +1032,10 @@ h1, h2, h3, h4, h5, h6 {
 .hero__content {
 	position: relative;
 	z-index: 3;
-	padding: 190px 25% 135px;	
+	padding: 190px 280px 135px;	
 }
 
-.hero .logo {
+.hero__logo {
 	display: none;	
 }
 
@@ -1001,18 +1050,18 @@ h1, h2, h3, h4, h5, h6 {
 	flex-wrap: 	wrap;	
 }
 
-.trends__container .substrate {
+.trends__substrate {
 	width: 25%;	
 	background-clip: content-box;
 	padding-left: 2px;
 	padding-right: 2px;
 }
 
-.trends__container .substrate:nth-child(4n+1) {
+.first-in-row-trend {
 	padding-left: 0;	
 }
 
-.trends__container .substrate:nth-child(4n+4) {
+.last-in-row-trend {
 	padding-right: 0;	
 }
 
@@ -1061,22 +1110,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product {
-	width: 30%;
-	margin-left: 2.5%;
-	margin-right: 2.5%;
+	width: 33.33333%;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+
+.last-product {
 	margin-bottom: 30px;
 }
 
-.product:last-child {
-	margin-bottom: 30px;
+.first-in-row-product {
+	padding-left: 0;	
 }
 
-.product:nth-child(3n+1) {
-	margin-left: 0;	
-}
-
-.product:nth-child(3n+3) {
-	margin-right: 0;	
+.last-in-row-product {
+	padding-right: 0;	
 }
 
 .product__content {
